@@ -1,0 +1,127 @@
+/* Root CSS variables for theme management */
+
+:root {
+    --logo-color: #fff;
+    --outline-color: #eae8e0;
+    --input-color: #808080;
+    --text-color: #eae8e0
+}
+
+/* Dark theme overrides for the root CSS variables */
+
+.dark-theme {
+    --logo-color: #222;
+    --outline-color: #222;
+    --input-color: #eae8e0;
+    --text-color: #000
+}
+
+/* Styling for the form container box */
+
+.formbox {
+    position: fixed;
+    display: flex;
+    height: calc(100dvh - 75px);
+    width: calc(100dvw - 260px);
+    left: 255px;
+}
+
+/* Styling for forms within the formbox */
+
+.formbox form {
+    height: 65%;
+    min-height: 500px;
+    max-height: fit-content;
+    width: 600px;
+    min-width: fit-content;
+    margin: auto;
+    border: 4px solid var(--outline-color);
+    border-radius: 20px;
+    padding: 40px 50px ;
+    backdrop-filter: blur(20px); /* Blurring background for focus on form */
+}
+
+/* Input field styling in forms */
+
+.formbox input {
+    color: var(--text-color);
+    height: 25px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 3px solid var(--logo-color); /* Underline effect */
+    padding: 5px 3px;
+    font-size: 16px;    
+}
+
+/* Adjust formbox position and width when sidebar is active */
+
+.sidebar.active ~ .formbox {
+    left: 80px;
+    width: calc(100vw - 85px);
+}
+
+/* Styling for form fields like name, email, phone, subject */
+
+.name, .email, .phone, .subject {
+    color: #fff;
+    position: relative;
+    margin: 30px 0;
+    width: 280px;
+}
+
+/* Styling for labels in form fields */
+
+.name label, .email label, .phone label, .subject label {
+    color: var(--logo-color);
+    position: absolute;
+    top: 25%;
+    transform: translateY(-30%);
+    transition: 0.2s;
+}
+
+/* Animation effect for labels when input fields are focused or filled */
+
+input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 23px;
+}
+
+/* Styling for the message box */
+
+.message-box {
+    color: var(--logo-color);
+}
+
+/* Styling for the message box */
+
+.formbox textarea {
+    margin-top: 15px;
+    background-color: rgba(128, 128, 128, 0.5);
+    outline: none;
+    padding: 3px;
+    font-size: 16px;
+    width: 90%;
+    min-height: 150px;
+    border-radius: 6px;
+}
+
+/* Styling for buttons in forms */
+
+.formbox button {
+    width: 100%;
+    border-radius: 10px;
+    height: 25px;
+    background-color: #fff;
+    font-weight: bold;
+    color: black;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* Hover effect for buttons */
+
+.formbox button:hover {
+    background-color: black;
+    color: #fff;
+}

@@ -1,0 +1,73 @@
+/* Root variables for theme management */
+
+:root{
+    --text-color: #fff;
+}
+
+/* Overriding text color in dark theme */
+
+.dark-theme{
+    --text-color: #000;
+}   
+
+/* Main content area styling */
+
+.content{
+    padding: 20px;
+    position: absolute;
+    left: 255px;
+    width: calc(100vw - 260px);
+    min-height: calc(100dvh - (70px));
+    color: var(--text-color);
+}
+
+/* Styling for tables */
+
+table{
+    backdrop-filter: blur(20px);
+    table-layout: fixed;
+    text-align: center;
+    margin: auto;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    width: 85%;
+    margin: 10px auto;
+}
+
+/* Uniform styling for table cells and headers */
+
+table, td, th{
+    padding: 0.1%;
+    border: 3px solid #ff0000;
+    border-collapse: collapse;
+}
+
+/* Styling for h2 headings */
+
+h2{
+    margin-top: 20px;
+}
+
+/* Styling for h1 headings */
+
+h1{
+    font-size: 50px;
+}
+
+/* Profile picture styling */
+
+#pfp {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    float: right;
+    transform: translate(-25px, -30px);
+    margin-left: 10px;
+}
+
+/* Adjusts .content position and width when sidebar is in active state */
+
+.sidebar.active ~ .content {
+    left: 80px;
+    width: calc(100vw - (85px));
+}

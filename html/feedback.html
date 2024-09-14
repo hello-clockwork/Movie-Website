@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Gagandeep Singh" />
+    <meta name="StudentID" content="991740640" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/feedback.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Sign/Log In</title>
+  </head>
+  <body>
+    <div class="upper">
+      <div class="logo flex-property">
+        <a href="aboutme.html">ClockWorK</a>
+      </div>
+      <div class="search">
+        <input type="text" class="search-bar" placeholder="Search" />
+        <button class="search-button">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+      <div class="theme">
+        <img src="../images/sun.png" id="icon" alt="theme" />
+      </div>
+    </div>
+    <div class="main">
+      <div class="sidebar">
+        <div class="siderbar-upper">
+          <ul>
+            <li>
+              <a href="#"><i class="bx bx-menu" id="btn"></i></a>
+            </li>
+            <li>
+              <a href="index.html"
+                ><i class="bx bxs-home"></i><span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="downloads.html"
+                ><i class="bx bx-download"></i><span>Downloads</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-lower">
+          <ul>
+            <li>
+              <a href="#"><i class="bx bx-cog"></i><span>Settings</span></a>
+            </li>
+            <li>
+              <a href="feedback.html"
+                ><i class="bx bx-message-detail"></i><span>Feedback</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="formbox">
+        <form action="#">
+          <div class="name">
+            <input type="text" id="name" required />
+            <label for="name">Name</label>
+          </div>
+          <div class="email">
+            <input type="text" id="email" required />
+            <label for="email">Email</label>
+          </div>
+          <div class="phone">
+            <input type="number" id="phone" required />
+            <label for="phone">Phone Number</label>
+          </div>
+          <div class="subject">
+            <input type="text" id="subject" required />
+            <label for="subject">Subject</label>
+          </div>
+          <div class="message-box">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" spellcheck="false"></textarea>
+          </div>
+          <div class="submit">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="flex-property">&copy;</footer>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

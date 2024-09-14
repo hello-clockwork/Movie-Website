@@ -1,0 +1,93 @@
+/* Main content area styling */
+
+.content {
+    position: relative;
+    left: 255px;
+    width: calc(100vw - 270px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid;
+    margin-bottom: 100px ;
+}
+
+/* Main content area styling */
+
+.sidebar.active ~ .content {
+    left: 80px;
+    width: calc(100vw - (100px));
+}
+
+/* Styling for each subcontent item */
+
+.subcontent {
+    width: 250px;
+    margin: 10px 10px 10px 0;
+    padding: 0 0 10px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Styling for each subcontent item */
+
+.subcontent a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 22px;
+}
+
+/* Styling for images inside subcontent */
+
+.subcontent img {
+    height: 350px;
+    width: 233.33px;
+    border: 1px solid var(--link-color);
+}
+
+/* Styling for the image description overlay */
+
+.img-body {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    height: 355px;
+    font-size: 1rem;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%,rgba(0,0,0,0.1) 50%, rgba(0,0,0,1) 100%);
+    backdrop-filter: blur(3px);
+    color: #fff;
+    line-height: 2rem;
+    text-transform: capitalize;
+}
+
+/* Hover effect for subcontent to reveal the image description */
+
+.subcontent:hover .img-body{
+    top: 0;
+}
+
+/* Media query for responsiveness at max-width 605px */
+
+@media (max-width: 605px) {
+    /* Adjusting subcontent margin for smaller screens */
+    .subcontent{
+        margin: 20px auto;
+    }
+}
+
+.footer{
+    position: fixed;
+    color: var(--link-color);
+    bottom: 0;
+    z-index: 1;
+    width: calc(100vw - (260px));
+    left: 250px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    background-color: var(--background-color);
+}
+
+.sidebar.active ~ .footer{
+    left: 75px;
+    width: calc(100vw - (70px));
+}

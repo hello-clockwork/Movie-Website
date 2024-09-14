@@ -1,0 +1,77 @@
+/* Defining root variables for easy theme management and consistency */
+
+:root{
+    --link-color: #fff;
+}
+
+/* Dark theme variables, will override :root variables when dark theme is active */
+
+.dark-theme{
+    --link-color:#222;
+}
+
+/* Main content area styling */
+
+.content{
+    position: relative;
+    left: 255px;
+    width: calc(100vw - 260px);
+    margin-bottom: 1%
+}
+
+/* Adjusts .content position and width when sidebar is in active state */
+
+.sidebar.active ~ .content {
+    left: 80px;
+    width: calc(100vw - (85px));
+}
+
+/* Styling for subcontent area, including text color from CSS variable */
+
+.subcontent{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    color: var(--link-color);
+}
+
+/* Styling for videos within subcontent, with responsiveness */
+
+.subcontent video{
+    width: fit-content;
+    height: 200px;
+    margin: auto;
+    border-radius: 25px;
+    transition: 0.2s;
+}
+
+/* Hover effect for videos */
+
+video:hover{
+    border-radius: 0;
+}
+
+/* Description block styling, adjacent to videos */
+
+.description{
+    margin: 0 20px;
+}
+
+/* General styling for <span> elements */
+
+span{
+    font-size: 30px;
+}
+
+/* Media query for responsiveness at max-width 800px */
+
+@media (max-width: 800px) {
+    /* Adjust .content position when sidebar is active for small screens */
+    .sidebar.active ~ .content{
+        position: fixed; /* Fixing position to the viewport */
+    }
+    .subcontent{
+        flex-direction: column; /* Stack flex items vertically */
+        margin: 10px auto;  /* Adjusting margin for smaller screens */
+    }
+}

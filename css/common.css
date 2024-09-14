@@ -1,0 +1,238 @@
+/* Please check line 103 */
+
+/* Importing Poppins font from Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Root CSS variables for easy theme management */
+
+:root {
+    --background-color: #222;
+    --logo-color: #fff; 
+    --link-color: #fff;
+    --icon-color: #ff0000;
+    --border-color: #ff0000;
+    --outline-color: #222;
+    --input-color: #808080;
+}
+
+
+/* Dark theme variables, will override :root variables when dark theme is active */
+
+.dark-theme {
+    --background-color: #e5e3d9;
+    --logo-color: #222;
+    --link-color: #222;
+    --outline-color: #eaeaea;
+    --input-color: #eae8e0;
+    background-image: url(../images/bg_white.jpg);
+}
+
+/* Global styles, including font family and transition effect for all elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling, using background variables and setting a fixed image */
+
+body {
+    overflow-x: hidden;
+    background: url(../images/bg_1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Styling for placeholder text in input elements */
+
+::placeholder {
+    color: var(--link-color);
+}
+
+/* Main content area styling */
+
+.main {
+    position: relative;
+    top: 65px;
+    width: 100%;
+}
+
+/* Sidebar styling, including fixed position and grid layout */
+
+.main .sidebar {
+    position: fixed;
+    width: 250px;
+    background-color: var(--background-color);
+    border: 3px solid var(--icon-color);
+    border-left: 0;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 7fr 1fr;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    height: calc(100dvh - 81px);
+    z-index: 1;
+    overflow: hidden auto;
+}
+
+/* Styling for active state of sidebar, adjusting width */
+
+.sidebar.active {
+    width: 75px;
+}
+
+/* Hiding span elements in the sidebar when it's active */
+
+.sidebar.active span{
+    display: none;
+}
+
+/* Rotating button icon in the active state of the sidebar */
+
+.sidebar.active #btn{
+    transform: rotate(180deg);
+}
+
+/* I belive this code should work but it doesn't */
+/* I dont know why,*/
+/* Please tell me because code line64 to line74 doesnt look good */
+
+/*.sidebar.active {
+    width: 75px;
+    span {
+        display: none;
+    }
+    #btn { 
+        transform: rotate(180deg); 
+    }
+} */
+
+.flex-property {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sidebar list item styling */
+
+.sidebar li {
+    margin: 0 0 20px 0;
+    display: flex;
+    transform: translateX(9px);
+    align-items: center;
+    width: max-content;
+}
+
+/* Sidebar link styling */
+
+.sidebar a {
+    color: var(--link-color);
+    font-size: 1.7rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+/* Sidebar link styling */
+
+.sidebar a:hover {
+    color: red;
+}
+
+/* Hover effect for icons in the sidebar */
+
+.sidebar .bx:hover {
+    background-color: var(--logo-color);
+    border-radius: 25%;
+}
+
+/* Icon styling in the sidebar */
+
+.sidebar .bx {
+    color: #ff0000;
+    font-size: 2.4rem;
+    padding: 10px;
+}
+
+/* Upper section styling, including grid layout */
+
+.upper {
+    position: fixed;
+    width: 100%;
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    height: 60px;
+    border: 3px solid var(--border-color);
+    z-index: 1;
+}
+
+/* Logo section styling within the upper section */
+
+.upper .logo {
+    height: 100%;
+}
+
+/* Styling for links in the logo section */
+
+.upper a {
+    color: var(--logo-color);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* Hover effect for links in the logo section */
+
+.upper a:hover {
+    font-size: 2.1rem;
+    color: #aaa9ad;
+}
+
+/* Search bar container styling */
+
+.upper .search {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    min-width: 100px;
+    justify-content: center;
+    height: 35px;
+}
+
+/* Search input field styling */
+
+.search .search-bar {
+    background-color: var(--input-color);
+    color: var(--link-color);
+    font-size: 20px;
+    border-radius: 25px 0 0 25px;
+    width: 100%;
+    outline: none;
+    padding: 0 20px;
+}
+
+/* Search button styling */
+
+.search .search-button {
+    border-radius: 0 25px 25px 0;
+    width: 10%;
+    min-width: 50px;
+    transition: 0.1ms;
+}
+
+/* Styling for icons within buttons */
+
+button .bx {
+    transform: translateY(2px);
+    font-size: 1.5rem;
+}
+
+/* Theme switcher styling */
+
+.upper .theme {
+    display: flex;
+    height: 40px;
+    margin: auto;
+}
